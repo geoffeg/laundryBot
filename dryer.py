@@ -13,6 +13,9 @@ class Dryer:
   notification_sent = False 
   readings = deque(maxlen=15)
 
+  def __init__(self):
+    self.state_time = time.time()
+
   def dryer_off(self):
     current_time = time.time()
     if current_time > self.transition_time + 60:

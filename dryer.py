@@ -30,7 +30,7 @@ class Dryer:
   def send_notification(self):
     print("sending notification")
     slack_webhook_url = os.environ['SLACK_WEBHOOK_URL']
-    slack_data = {'text' : 'Dryer stopped'}
+    slack_data = {'text' : 'Dryer finished'}
     response = requests.post(slack_webhook_url, json=slack_data)
     if response.status_code != 200:
         print(f'Slack returned an error: {response.status_code} {response.text}')
